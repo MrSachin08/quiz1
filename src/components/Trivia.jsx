@@ -9,10 +9,12 @@ const Trivia = ({data,setTimeOut,questionNumber,setQuestionNumber}) => {
 
 
 
-  useEffect(()=>{
-    setQuestion(data[questionNumber-1]);
-  },[data,questionNumber])
-  ;
+useEffect(() => {
+    
+    const randomQuestionNumber = Math.floor(Math.random() * data.length);
+ 
+    setQuestion(data[randomQuestionNumber]);
+  }, [data]);
   const delay=(duration,callback)=>{
     setTimeout(() => {
       callback();
